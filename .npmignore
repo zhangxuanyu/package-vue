@@ -1,0 +1,12 @@
+.*
+*.md
+*.yml
+build/
+node_modules/
+src/
+test/
+gulpfile.js
+config/
+static/
+index.html
+package-lock.json
