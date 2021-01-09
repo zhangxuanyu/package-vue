@@ -1,0 +1,447 @@
+/* common */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.text_clip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-all;
+  white-space: nowrap;
+}
+.clearfix {
+  zoom: 1;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+  visibility: hidden;
+}
+/*
+滚动条样式
+*/
+.log_content1::-webkit-scrollbar {
+  width: 5px; /*对垂直流动条有效*/
+  height: 5px; /*对水平流动条有效*/
+  }
+  
+  /*定义滚动条的轨道颜色、内阴影及圆角*/
+  .log_content1::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color:rgba(0, 32, 71, 1);
+  border-radius: 10px;
+  }
+  
+  
+  /*定义滑块颜色、内阴影及圆角*/
+  .log_content1::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: rgba(43, 196, 255, 1);
+  }
+  
+  /* we dont need it */
+  /*定义两端按钮的样式*/
+  /* .log_content1::-webkit-scrollbar-button {
+  background-color:rgba(0, 32, 71, 1);
+  } */
+  
+  /*定义右下角汇合处的样式*/
+  .log_content1::-webkit-scrollbar-corner {
+  background:rgba(0, 32, 71, 1);
+  }
+/**
+去除滚动条样式
+*/
+.no_scroll::-webkit-scrollbar {
+  width: 0px; /*对垂直流动条有效*/
+  height: 0px; /*对水平流动条有效*/
+  }
+  
+  /*定义滚动条的轨道颜色、内阴影及圆角*/
+  .no_scroll::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color:rgba(0, 32, 71, 1);
+  border-radius: 3px;
+  }
+  
+  
+  /*定义滑块颜色、内阴影及圆角*/
+  .no_scroll::-webkit-scrollbar-thumb{
+  border-radius: 7px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: rgba(43, 196, 255, 1);
+  }
+  
+  /*定义两端按钮的样式*/
+  .no_scroll::-webkit-scrollbar-button {
+  background-color:rgba(0, 32, 71, 1);
+  }
+  
+  /*定义右下角汇合处的样式*/
+  .no_scroll::-webkit-scrollbar-corner {
+  background:rgba(0, 32, 71, 1);
+  }
+
+/**
+改写element样式
+**/
+.common_el{
+  position: relative;
+}
+.common_el .el-form-item__label{
+  color: rgba(178, 218, 255, 1);
+}
+.common_el .el-input__inner{
+  background-color: rgba(0, 15, 94, 1);
+  border-radius: 6px;
+  height: 44px;
+  line-height: 44px;
+  border: solid 1px rgba(0, 57, 147, 1);
+  color: rgba(14, 168, 252, 1);
+}
+.common_el .el-form-item__content::after,.common_el .el-form-item__content::before{
+  width: 1px;
+	height: 12px;
+  background-color: rgba(43, 196, 255, 1);
+  position: absolute;
+  z-index: 1;
+}
+.common_el .el_btn .el-form-item__content::after,.common_el .el_btn .el-form-item__content::before{
+  width: 0;
+}
+.common_el .el-form-item__content::before{
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+}
+.common_el .el-form-item__content::after{
+  right: 0;
+  top: 50%;
+  margin-top: -6px;
+}
+.common_el .el_btn .el-button{
+  width: 80px;
+	height: 44px;
+	background-color: rgba(0, 40, 89, 1);
+	border-radius: 6px;
+  border: solid 1px rgba(0, 59, 131, 1);
+  color: rgba(14, 168, 252, 1);
+  position: relative;
+}
+.common_el .el_btn .el-button--primary{
+  width: 80px;
+	height: 44px;
+	background-color: rgba(0, 15, 94, 1);
+	border-radius: 6px;
+	border: solid 1px rgba(0, 57, 147, 1);
+}
+.common_el .el_btn .el-button i{
+  width: 1px;
+	height: 12px;
+  background-color: rgba(43, 196, 255, 1);
+  position: absolute;
+  z-index: 1;
+  left: -1px;
+}
+.common_el .el_btn .el-button s{
+  width: 1px;
+	height: 12px;
+  background-color: rgba(43, 196, 255, 1);
+  position: absolute;
+  z-index: 1;
+  right: -1px;
+}
+.common_el .el-select{
+  margin-left: 0!important;
+}
+.common_el .el-cascader__tags{
+  height: 25px;
+  overflow: hidden;
+}
+.common_el .el-select__tags{
+  height: 28px;
+  overflow: hidden;
+}
+.common_el .el-textarea__inner{
+  background-color: rgba(0, 15, 94, 1);
+  border: solid 1px rgba(0, 57, 147, 1);
+}
+.el_time .el-input__inner{
+  background-color: rgba(0, 15, 94, 1);
+  border: solid 1px rgba(0, 57, 147, 1);
+  color: rgba(14, 168, 252, 1);
+}
+.el_time .el-input__inner::-webkit-input-placeholder {
+  color: #177ddb;
+}
+.el_time .el-date-editor .el-range-input, .el_time .el-date-editor .el-range-separator{
+  background-color: rgba(0, 15, 94, 1);
+  color: rgba(2, 91, 174, 1);
+}
+.el_time .el-date-editor .el-range-separator{
+  width: 50px;
+  line-height: 36px;
+  box-sizing: border-box;
+  width: 8%;
+}
+.el_time .el-range-editor.is-active,.el_time .el-range-editor.is-active:hover{
+  border-color: rgba(0, 57, 147, 1);
+}
+.el_time .el-input__inner:hover{
+  border-color: rgba(0, 57, 147, 1);
+}
+.el_time .el-range-editor .el-range-input{
+  color: rgba(14, 168, 252, 1);
+}
+.el_time .el-icon-date:before{
+  color: rgba(14, 168, 252, 1);
+}
+.el_time .el-date-editor .el-range__icon{
+  line-height: 36px;
+}
+.el_time .el-date-editor .el-range__close-icon{
+  line-height: 36px;
+}
+.el_time{
+  position: relative;
+}
+.el_time>i,.el_time>s{
+  width: 1px;
+	height: 33%;
+  background-color: rgba(43, 196, 255, 1);
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.el_time>i{
+  left: 0px;
+}
+.el_time>s{
+  right: 0px;
+}
+
+.title_time{
+  position: relative;
+}
+.title_time .el-input__inner{
+  height: 24px!important;
+  line-height: 24px;
+  width: 110px;
+}
+.title_time .el-range-editor.el-input__inner{
+  padding: 0 5px;
+  width: 210px;
+}
+.title_time .el-date-editor .el-range__icon{
+  line-height: 22px;
+}
+.title_time .el-date-editor .el-range-separator{
+  border: 0;
+  line-height: 22px;
+  text-align: center;
+}
+.title_time .el-date-editor .el-range__close-icon{
+  line-height: 24px;
+}
+.title_time .el-date-editor .el-range-separator{
+  width: 30px;
+}
+.title_time .el-range-editor .el-range-input{
+  font-size: 12px;
+}
+.title_time .el-select .el-tag{
+  margin-top: 4px;
+}
+.title_time .el-tag--small{
+  height: 20px;
+  line-height: 18px;
+}
+.title_time .el-input__icon{
+  line-height: 22px;
+}
+
+/* .title_time .el-input__icon:nth-of-type(2):after{
+  width: 1px;
+  height: 8px;
+  background-color: #2bc4ff;
+  margin-top: -4px;
+  margin-left: 30px;
+}
+.title_time .el-input__icon:nth-of-type(1):after{
+  width: 1px;
+  height: 8px;
+  background-color: #2bc4ff;
+  position: absolute;
+  left: -1px;
+  top:6px;
+} */
+.w100 .el-input__inner {
+  width: 100px;
+}
+.w120 .el-input__inner {
+  width: 120px;
+}
+.w130 .el-input__inner {
+  width: 130px;
+}
+.w280 .el-input__inner {
+  width: 280px;
+}
+.w350 .el-input__inner {
+  width: 350px;
+}
+.el-form--inline .el-form-item {
+  margin-right: 10px !important;
+}
+
+.el-table__body {
+  width: 100% !important;
+}
+.el-table__body-wrapper::-webkit-scrollbar {
+  width: 5px; /*对垂直流动条有效*/
+  height: 5px; /*对水平流动条有效*/
+}
+  
+/*定义滚动条的轨道颜色、内阴影及圆角*/
+.el-table__body-wrapper::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color:rgba(0, 32, 71, 1);
+  border-radius: 10px;
+}
+  
+  
+/*定义滑块颜色、内阴影及圆角*/
+.el-table__body-wrapper::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: rgba(43, 196, 255, 1);
+}
+  
+/*定义右下角汇合处的样式*/
+.el-table__body-wrapper::-webkit-scrollbar-corner {
+  background:rgba(0, 32, 71, 1);
+}
+
+.el-table, .el-table__expanded-cell {
+  background-color: transparent !important;
+}
+
+.back_gradient {
+  background-image: linear-gradient(
+    0deg,
+    rgba(0, 9, 122, 0.3) 0%,
+    rgba(6, 15, 48, 0.3) 100%
+  );
+  border-style: solid;
+  border-width: 1px;
+  border-image-source: linear-gradient(
+    0deg,
+    rgba(19, 76, 143, 0.3) 0%,
+    rgba(6, 15, 48, 0.3) 100%
+  );
+  border-image-slice: 1;
+}
+
+/**
+element下拉样式更改  rgba(0, 15, 94, 1)   rgba(0, 15, 94, 1)
+*/
+.el-popper[x-placement^=bottom] .popper__arrow{
+  border-bottom-color: rgba(0, 15, 94, 1)!important;
+}
+.el-popper[x-placement^=bottom] .popper__arrow::after{
+  border-bottom-color: rgba(0, 15, 94, 1)!important;
+}
+.el-cascader__dropdown{
+  background-color:rgba(0, 15, 94, 1)!important;
+  border: solid 1px rgba(0, 57, 147, 1)!important;
+}
+.el-select-dropdown{
+  background-color:rgba(0, 15, 94, 1)!important;
+  border: solid 1px rgba(0, 57, 147, 1)!important;
+}
+.el-select-dropdown__item.hover, .el-select-dropdown__item:hover{
+  background-color: rgba(0, 0, 60, 1)!important;
+}
+.el-select-dropdown__item{
+  color: rgba(178, 218, 255, 1)!important;
+}
+.el-select-dropdown__item.selected{
+  color: #409EFF!important;
+}
+.el-picker-panel{
+  background-color:rgba(0, 15, 94, 1)!important;
+  border: solid 1px rgba(0, 57, 147, 1)!important;
+  color: rgba(178, 218, 255, 1)!important;
+}
+.el-popper[x-placement^=top] .popper__arrow::after{
+  border-top-color: rgba(0, 15, 94, 1)!important;
+}
+.el-popper[x-placement^=top] .popper__arrow{
+  border-top-color: rgba(0, 15, 94, 1)!important;
+}
+.el-picker-panel__icon-btn{
+  color: rgba(178, 218, 255, 1)!important;
+}
+
+/* anniu */
+.btn_dix {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  box-shadow: inset 0 0 12px #035097;
+}
+.search {
+  width: 66px;
+  background-color: #000f5e;
+  border: solid 1px #003993;
+  color: #0ea8fc;
+}
+.goback {
+  width: 70px;
+  background-color: #002859;
+  border: solid 1px #003b83;
+  color: #0ea8fc;
+  float: right;
+  margin-right: 20px;
+}
+.goback_1 {
+  width: 70px;
+  background-color: #002859;
+  border: solid 1px #003b83;
+  color: #0ea8fc;
+  margin-right: 20px;
+}
+.export {
+  width: 100px;
+  background-color: #000f5e;
+  border: solid 1px #003993;
+  color: #0ea8fc;
+  float: right;
+}
+.mr10 {
+  margin-right: 10px;
+}
+.dialog_has_form.el-form--inline .el-form-item {
+  margin-right: 10px !important;
+}
+.apass_table .el-table th > .cell {
+  line-height: 34px;
+}
